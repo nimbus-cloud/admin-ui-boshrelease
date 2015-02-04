@@ -37,3 +37,5 @@ uaadb_uri: <%= get_db_uri("uaadb") %>
 uaa_groups_admin: [ <%= p("admin_ui.uaa.scopes.admin").join(", ") %> ]
 uaa_groups_user: [ <%= p("admin_ui.uaa.scopes.user").join(", ") %> ] 
 varz_discovery_interval: 30
+table_height: <%= p("admin_ui.table_height") %>
+table_page_size: <%= p("admin_ui.table_page_size") %>

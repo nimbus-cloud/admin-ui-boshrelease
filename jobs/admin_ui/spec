@@ -26,6 +26,12 @@ properties:
   admin_ui.cloud_controller_ssl_verify_none:
     description: "Disable ssl verify"
     default: false
+  admin_ui.table_height:
+    description: Maximum height of the data table
+    default: 300px
+  admin_ui.table_page_size:
+    description: Default selection for the page size in the table
+    default: 10
   admin_ui.uri:
     description: "Uri to register with the router, also requires the apps network to be set"
   networks.apps:
