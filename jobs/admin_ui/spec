@@ -40,7 +40,7 @@ properties:
   admin_ui.max_memory:
     description: "Maximum memory for the admin ui process. Monit restarts process if limit is reached."
     default: "1 Gb"
-  admin_ui.event_days
+  admin_ui.event_days:
     description: "Events history"
     default: 7
   networks.apps:
