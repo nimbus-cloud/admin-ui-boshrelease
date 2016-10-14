@@ -4,6 +4,7 @@
 set -e
 
 OUTPUT="$PWD/bosh-rc"
+VERSION="$(cat version/version)"
 
 pushd admin-ui-boshrelease/
 
@@ -11,6 +12,6 @@ pushd admin-ui-boshrelease/
   # into release dir, which is invalid cross-device link
   export HOME=$PWD
   gem install bosh_cli
-  bosh -n create release --with-tarball --name admin-ui
+  bosh -n create release --with-tarball --name admin-ui --version "$VERSION"
   mv dev_releases/admin-ui/admin-ui-*.tgz "$OUTPUT"
 popd

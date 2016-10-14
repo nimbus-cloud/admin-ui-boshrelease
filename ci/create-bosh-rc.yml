@@ -10,7 +10,7 @@ image_resource:
 
 inputs:
 - name: admin-ui-boshrelease
-#- name: version
+- name: version
 
 outputs:
 - name: bosh-rc
