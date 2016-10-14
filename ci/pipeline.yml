@@ -5,17 +5,17 @@ resources:
     uri: https://github.com/nimbus-cloud/admin-ui-boshrelease
     branch: concourse-ci
 
-- name: version
-  type: semver
-  initial_version: 10.1
-  source:
-    bucket: {{s3_bucket}}
-    key: admin-ui-current-version
-    access_key_id: {{s3_access_key_id}}
-    secret_access_key: {{s3_secret_access_key}}
-    endpoint: {{s3_host}}
-    disable_ssl: true
-#    use_v2_signing: true
+#- name: version
+#  type: semver
+#  initial_version: 10.1
+#  source:
+#    bucket: {{s3_bucket}}
+#    key: admin-ui-current-version
+#    access_key_id: {{s3_access_key_id}}
+#    secret_access_key: {{s3_secret_access_key}}
+#    endpoint: {{s3_host}}
+#    disable_ssl: true
+##    use_v2_signing: true
 
 - name: bosh-rc
   type: s3
@@ -34,8 +34,8 @@ jobs:
   plan:
   - get: admin-ui-boshrelease
     trigger: true
-  - get: version
-    trigger: true
+#  - get: version
+#    trigger: true
   - task: create-bosh-rc
     file: admin-ui-boshrelease/ci/create-bosh-rc.yml
   - put: bosh-rc
