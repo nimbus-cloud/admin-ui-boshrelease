@@ -15,7 +15,7 @@ resources:
     secret_access_key: {{s3_secret_access_key}}
     endpoint: {{s3_host}}
     disable_ssl: true
-##    use_v2_signing: true
+    use_v2_signing: true
 
 - name: bosh-rc
   type: s3
@@ -26,7 +26,7 @@ resources:
     secret_access_key: {{s3_secret_access_key}}
     endpoint: {{s3_host}}
     disable_ssl: true
-#    use_v2_signing: true
+    use_v2_signing: true
 
 jobs:
 - name: bosh-rc
