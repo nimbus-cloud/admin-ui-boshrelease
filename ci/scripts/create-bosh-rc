@@ -11,7 +11,7 @@ pushd admin-ui-boshrelease/
   # work-around Go BOSH CLI trying to rename blobs downloaded into ~/.root/tmp
   # into release dir, which is invalid cross-device link
   export HOME=$PWD
-
-  bosh -n create-release --tarball --name admin-ui --version "$VERSION"
+  gem install bosh_cli
+  bosh -n create release --with-tarball --name admin-ui --version "$VERSION"
   mv releases/admin-ui/admin-ui-*.tgz "$OUTPUT"
 popd

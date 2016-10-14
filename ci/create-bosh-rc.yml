@@ -4,7 +4,9 @@ platform: linux
 image_resource:
   type: docker-image
   source:
-    repository: concourse/bosh-cli
+#    repository: concourse/bosh-cli
+    repository: ruby
+    tag: 2.3.1
 
 inputs:
 - name: admin-ui-boshrelease
