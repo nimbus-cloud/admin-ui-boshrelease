@@ -16,3 +16,5 @@ blobs
 /admin-ui.local.yml
 releases/**/*.tgz
 releases/admin-ui
+.bosh_config
+.gem
