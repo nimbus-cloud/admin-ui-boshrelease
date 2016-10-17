@@ -10,7 +10,7 @@ resources:
   initial_version: 10.0.0
   source:
     bucket: {{s3_bucket}}
-    key: admin-ui-current-version
+    key: admin-ui/current-version
     access_key_id: {{s3_access_key_id}}
     secret_access_key: {{s3_secret_access_key}}
     endpoint: {{s3_host}}
@@ -35,8 +35,11 @@ jobs:
   - get: admin-ui-boshrelease
     trigger: true
   - get: version
-    trigger: true
+    params: {bump: patch}
   - task: create-bosh-rc
     file: admin-ui-boshrelease/ci/create-bosh-rc.yml
-  - put: bosh-rc
-    params: {file: bosh-rc/admin-ui-*.tgz}
+  - aggregate:
+    - put: version
+      params: {file: version/version}
+    - put: bosh-rc
+      params: {file: bosh-rc/admin-ui-*.tgz}
