@@ -7,7 +7,7 @@ resources:
 
 - name: version
   type: semver
-  initial_version: 10.0.0
+  initial_version: "10.0.0"
   source:
     bucket: {{s3_bucket}}
     key: admin-ui/current-version
